@@ -21,7 +21,9 @@
 	},
 	"scripts": {
 		"start": "nodemon --inspect ./server/index.js --exec babel-node",
-		"test": "jest"
+		"test": "jest",
+		"db:create": "sudo docker build . -t mongodb_dev",
+		"db:run": "sudo docker run -p 27017:27017 --name mongodb_dev_instance -i -t mongodb_dev"
 	},
 	"keywords": [],
 	"author": "",

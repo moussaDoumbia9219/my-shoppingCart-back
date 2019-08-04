@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"dependencies": {
 		"body-parser": "^1.19.0",
+		"dotenv": "^8.0.0",
 		"express": "^4.17.1",
+		"mongoose": "^5.6.8",
 		"nodemon": "^1.19.1",
 		"whatwg-fetch": "^2.0.4"
 	},
@@ -20,10 +22,11 @@
 		"regenerator-runtime": "^0.13.3"
 	},
 	"scripts": {
-		"start": "nodemon --inspect ./server/index.js --exec babel-node",
+		"start": "PORT=8055 DB_CONNECTION=mongodb://esiom:logique1heart@ds259377.mlab.com:59377/shopping-db nodemon --inspect ./server/index.js --exec babel-node",
 		"test": "jest",
-		"db:create": "sudo docker build . -t mongodb_dev",
-		"db:run": "sudo docker run -p 27017:27017 --name mongodb_dev_instance -i -t mongodb_dev"
+		"db:create": "sudo docker build . -t mongodb_dis",
+		"db:run": "sudo docker run -e MONGO_URL=mongodb://localhost:27018  --name  mongodb_dev_tcj -i -t mongodb_dis",
+		"db:seed": "PORT=8055 DB_CONNECTION=mongodb://esiom:logique1heart@ds259377.mlab.com:59377/shopping-db nodemon --inspect ./scripts/seed.js --exec babel-node"
 	},
 	"keywords": [],
 	"author": "",

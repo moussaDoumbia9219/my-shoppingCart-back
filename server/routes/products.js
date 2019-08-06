@@ -1,4 +1,4 @@
-import {} from '../../models/Product';
+import {ProductModel} from '../../models/Product';
 
 export default (app) =>  {
   

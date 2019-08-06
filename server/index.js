@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import users from './mocks/users';
+import cors from 'cors'
 import logger from './middleware/logger';
 import withAuthenticated  from './middleware/withAuthentication';
 import getUserRoutes  from './routes/users';
@@ -9,6 +10,7 @@ import db from '../db/index';
 
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 const port = process.env.PORT;

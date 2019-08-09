@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import users from './mocks/users';
 import cors from 'cors'
 import logger from './middleware/logger';
+import withAdminPermission from './middleware/withAdminPermission';
 import withAuthenticated  from './middleware/withAuthentication';
 import getUserRoutes  from './routes/users';
 import getProductsRoutes from './routes/products';
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 const port = process.env.PORT;
 app.use(withAuthenticated);
+app.use(withAdminPermission);
 app.use(logger);
 getUserRoutes(app);
 getProductsRoutes(app);

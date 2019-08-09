@@ -1,9 +1,9 @@
-import { UserModel } from '../models/User';
+import { UserModel } from '../../models/User';
 import AuthenticationService from '../service/AuthenticationService';
 import EmailService from '../service/EmailService';
 
 export default (app) => {
-  app.post('/v1/auth', async (req, res) => {
+  app.post('/v1/aut', async (req, res) => {
     if (req.user) {
       res.send(req.user).end();
     } else {

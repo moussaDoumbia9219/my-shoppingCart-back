@@ -5,8 +5,9 @@ export default (req, res, next) => {
     req.originalUrl,
     'isAuthenticated',
     typeof req.user === 'object',
-    'is  Admin: ',
-    req.user && req.user.role === 'admin'
+    'is Admin: ',
+    req.isAdmin
+    
   );
   next();
 };

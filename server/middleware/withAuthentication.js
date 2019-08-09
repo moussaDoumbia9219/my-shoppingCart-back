@@ -1,12 +1,4 @@
 import jwt from 'express-jwt';
-// export default(req, res, next) => {
-//   // TODO: is the user authenticated?  what's their role?
-//   // mock for now
-
-//   req.isAdmin = true;
-//   req.isAuthenticated= true;
-//   next();
-// }
 
 export default jwt({
   secret: process.env.JWT_SECRET,

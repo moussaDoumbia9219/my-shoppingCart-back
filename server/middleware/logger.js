@@ -4,9 +4,9 @@ export default (req, res, next) => {
     req.method,
     req.originalUrl,
     'isAuthenticated',
-    req.isAuthenticated,
+    typeof req.user === 'object',
     'is  Admin: ',
-    req.isAdmin
-  )
+    req.user && req.user.role === 'admin'
+  );
   next();
 };

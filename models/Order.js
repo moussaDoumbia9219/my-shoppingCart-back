@@ -5,7 +5,7 @@ export const OrderSchema = new Schema({
     timestamp: String,
     products: [{
         _id: Schema.Types.ObjectId,
-        name: Number,
+        name: String,
         images: [String]
     }],
     contact:{
